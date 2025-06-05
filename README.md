@@ -1,12 +1,23 @@
-# React + Vite
+## pv_tp_integrador_grupo7
+Desarrollo trabajo práctico Integrador
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[TpIntegrador.pdf](https://virtual.unju.edu.ar/pluginfile.php/912844/mod_resource/content/1/Trabajo%20practico%20integrador%202025.pdf)
 
-Currently, two official plugins are available:
+## Lista de Integrantes Grupo 7
+1. Usuario: davarr - Davide Arroyo
+2. Ruan Castiel Lindon Villanueva - usuario: Ruancas
+3. usuario: Fran181222 - Francisco Javier Ricardo Quispe
+4. Gabriel Ignacio Roel - usuario: GabrielGIR
+5. Brian Agustín Llanos- usuario: BrianLlanos1001
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Descripción del proyecto
+El presente Trabajo Práctico Integrador tiene como finalidad la aplicación y consolidación
+de los conocimientos adquiridos durante la cursada de Programación Visual. A lo largo de
+este proyecto, se abordará el desarrollo progresivo de una aplicación web funcional,
+utilizando React, Vite, JavaScript, React Router DOM, y todos los temas vistos en la
+materia.
+Desarrollar una SPA utilizando React + Vite, que permita implementar el manejo de estado
+global mediante Context API o Redux, con el fin de centralizar y compartir el estado de la
+aplicación entre diferentes componentes y páginas.
+La aplicación gestiona datos de productos a través de las siguientes funcionalidades: crear,
+editar, eliminar y visualizar información detallada de cada producto.
