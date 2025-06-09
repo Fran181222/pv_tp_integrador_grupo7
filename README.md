@@ -12,6 +12,7 @@ Desarrollo trabajo práctico Integrador
 
 ## ASISTENCIA
 Gabriel Ignacio Roel - usuario: GabrielGIR
+Francisco Javier Ricardo Quispe - usuario: Fran181222
 
 ## Descripción del proyecto
 El presente Trabajo Práctico Integrador tiene como finalidad la aplicación y consolidación
@@ -24,7 +25,3 @@ global mediante Context API o Redux, con el fin de centralizar y compartir el es
 aplicación entre diferentes componentes y páginas.
 La aplicación gestiona datos de productos a través de las siguientes funcionalidades: crear,
 editar, eliminar y visualizar información detallada de cada producto.
-
-## Asistencia 09/06
-
-Francisco Javier Ricardo Quispe - usuario: Fran181222
