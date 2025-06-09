@@ -10,6 +10,9 @@ Desarrollo trabajo práctico Integrador
 4. Gabriel Ignacio Roel - usuario: GabrielGIR
 5. Brian Agustín Llanos- usuario: BrianLlanos1001
 
+## ASISTENCIA
+Gabriel Ignacio Roel - usuario: GabrielGIR
+
 ## Descripción del proyecto
 El presente Trabajo Práctico Integrador tiene como finalidad la aplicación y consolidación
 de los conocimientos adquiridos durante la cursada de Programación Visual. A lo largo de
