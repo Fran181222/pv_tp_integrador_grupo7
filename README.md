@@ -28,3 +28,4 @@ editar, eliminar y visualizar información detallada de cada producto.
 ## Asistencia 09/06
 
 Francisco Javier Ricardo Quispe - usuario: Fran181222
+Brian Agustín Llanos - usuario: Brianllanos1001
