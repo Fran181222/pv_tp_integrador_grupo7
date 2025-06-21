@@ -42,11 +42,11 @@ const theme = createTheme({
 const ProductoForm = ({ initialData = {}, onSubmit }) => {
   const [producto, setProducto] = useState({
     id: '',
-    imagen: '',
-    nombre: '',
-    precio:'',
-    descripcion: '',
-    categoria: '',
+    image: '',
+    title: '',
+    price:'',
+    description: '',
+    category: '',
     ...initialData
   });
 
@@ -91,10 +91,10 @@ const ProductoForm = ({ initialData = {}, onSubmit }) => {
             <Grid>
               <TextField
                 fullWidth
-                name="nombre"
+                name="title"
                 label="Nombre"
                 variant="standard"
-                value={producto.nombre}
+                value={producto.title}
                 onChange={handleChange}
                 required
               />
@@ -102,10 +102,10 @@ const ProductoForm = ({ initialData = {}, onSubmit }) => {
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                name="precio"
+                name="price"
                 label="Precio"
                 variant="standard"
-                value={producto.precio}
+                value={producto.price}
                 onChange={handleChange}
                 required
               />
@@ -116,10 +116,10 @@ const ProductoForm = ({ initialData = {}, onSubmit }) => {
             <Grid>
               <TextField
                 fullWidth
-                name="descripcion"
+                name="description"
                 label="Descripción"
                 variant="standard"
-                value={producto.descripcion}
+                value={producto.description}
                 onChange={handleChange}
                 required
               />
@@ -127,10 +127,10 @@ const ProductoForm = ({ initialData = {}, onSubmit }) => {
             <Grid>
               <TextField
                 fullWidth
-                name="categoria"
+                name="category"
                 label="Categoria"
                 variant="standard"
-                value={producto.categoria}
+                value={producto.category}
                 onChange={handleChange}
                 required
               />
@@ -139,10 +139,10 @@ const ProductoForm = ({ initialData = {}, onSubmit }) => {
             <Grid item xs={12} sm={6}>
               <TextField
                 fullWidth
-                name="imagen"
+                name="image"
                 label="imagen URL"
                 variant="standard"
-                value={producto.imagen}
+                value={producto.image}
                 onChange={handleChange}
                 required
                 type="file"

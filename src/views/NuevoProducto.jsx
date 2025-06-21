@@ -4,24 +4,28 @@ import ProductoForm from '../components/ProductoForm';
 // import Button from '@mui/material/Button';
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
+import { agregarProducto } from '../services/api';
 
 
-const NuevoProducto = ({onAdd}) => {
+const NuevoProducto = () => {
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
-  const handleAdd = (nuevoProducto) => {
-    // Aquí deberías agregar al array global o API
-    onAdd(nuevoProducto)
-    setOpen(true); // Muestra el Snackbar
-    navigate('/'); // Redirige a la lista de productos
-  };
-   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
+ const handleAdd = async (nuevoProducto) => {
+    try {
+      await agregarProducto(nuevoProducto);
+      setOpen(true);
+      setTimeout(() => navigate('/'), 2000); 
+    } catch (error) {
+      console.error("Error al agregar producto:", error);
     }
+  };
 
+   const handleClose = (event, reason) => {
+    if (reason === 'clickaway') return;
     setOpen(false);
+    setError(null);
   };
   return (
     <div>
