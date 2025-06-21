@@ -12,6 +12,10 @@ Desarrollo trabajo práctico Integrador
 
 ## ASISTENCIA
 Gabriel Ignacio Roel - usuario: GabrielGIR
+Francisco Javier Ricardo Quispe - usuario: Fran181222
+Brian Agustín Llanos - usuario: BrianLlanos1001
+Davide Arroyo - usuario: arrdav
+Ruan Castiel Lindon Villanueva - usuario: Ruancas
 
 ## Descripción del proyecto
 El presente Trabajo Práctico Integrador tiene como finalidad la aplicación y consolidación
