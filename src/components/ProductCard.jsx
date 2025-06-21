@@ -1,50 +1,21 @@
-import React, { createContext, useState, useContext } from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { Button, CardActions } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+  import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleFavorite } from '../features/products/favoritesSlice';
 
-const ProductCard = ({ producto }) => {
-  const navigate = useNavigate();
+export default function ProductCard({ product }) {
+  const dispatch = useDispatch();
+  const favorites = useSelector(state => state.favorites);
+  const isFavorite = favorites.includes(product.id);
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={producto.image}
-        alt={producto.title}
-      />
-      <CardContent>
-        <Typography variant="caption" display="block">
-          ID# {producto.id}
-        </Typography>
-        <Typography gutterBottom variant="h5" component="div">
-          {producto.title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {producto.description}
-        </Typography>
-        <Typography variant="h6" sx={{ mt: 2 }}>
-          ${producto.price}
-        </Typography>
-        <Typography variant="caption" display="block">
-          Categoría: {producto.category}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button 
-        size="small" 
-        onClick={() => navigate(`/products/${producto.id}`)}
-        sx={{ mb: 1 }}>
-          Ver Detalles
-        </Button>
-      </CardActions>
-    </Card>
+    <div className="border p-4 rounded shadow">
+      <img src={product.image} alt={product.title} className="h-40 object-contain" />
+      <h3>{product.title}</h3>
+      <p>${product.price}</p>
+      <button onClick={() => dispatch(toggleFavorite(product.id))}>
+        {isFavorite ? '💖' : '🤍'}
+      </button>
+      <Link to={`/detalle/${product.id}`}>Ver más detalles</Link>
+    </div>
   );
-};
-
-export default ProductCard;
-
+}
