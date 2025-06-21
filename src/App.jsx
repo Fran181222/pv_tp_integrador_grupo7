@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Home from './views/Home';
 import NuevoProducto from './views/NuevoProducto';
 import { productosStore } from './data/productos';
 import './App.css'
@@ -11,11 +12,10 @@ function App() {
     setProductos([...productos, nuevo]);
   };
   return (
-    <>
       <Routes>
-        <Route path="/" element={<NuevoProducto onAdd={agregarProducto} />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/nuevo-producto" element={<NuevoProducto />} />
       </Routes>
-    </>
   );
 }
 
