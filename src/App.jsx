@@ -1,25 +1,49 @@
-import { Routes, Route, Link } from 'react-router-dom';
+// src/App.jsx
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { fetchProducts } from './features/products/productsSlice';
+import Navbar from './components/NavBar';
 import Home from './views/Home';
 import Favorites from './views/Favorites';
-import ProductDetail from './views/ProductDetail';
-import FormView from './views/FormView';
-import './App.css';
+import ProductDetails from './views/ProductDetails';
+import ProductForm from './components/ProductForm';
+import NotFound from './views/NotFound';
+import PrivateRoute from './components/PrivateRoute';
+import Login from './views/Login';
+import Register from './views/Register';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import { getDesignTokens } from './shared-theme/customTheme.jsx';
+import './App.css'; // Asegúrate de que este archivo exista y tenga estilos básicos
 
-export default function App() {
+const theme = createTheme(getDesignTokens('dark')); // Cambia 'dark' a 'light' si prefieres el tema claro
+
+function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, []);
+
   return (
-    <div>
-      <nav className="navbar">
-        <Link to="/">Home</Link>
-        <Link to="/favoritos">Favoritos</Link>
-        <Link to="/crear">Crear Producto</Link>
-      </nav>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/favoritos" element={<Favorites />} />
-        <Route path="/detalle/:id" element={<ProductDetail />} />
-        <Route path="/crear" element={<FormView />} />
-        <Route path="/editar/:id" element={<FormView editar />} />
+        {/* Rutas públicas */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        {/* Rutas protegidas */}
+        <Route path="/" element={<PrivateRoute><Home /></PrivateRoute>} />
+        <Route path="/favoritos" element={<PrivateRoute><Favorites /></PrivateRoute>} />
+        <Route path="/crear" element={<PrivateRoute><ProductForm /></PrivateRoute>} />
+        <Route path="/editar/:id" element={<PrivateRoute><ProductForm /></PrivateRoute>} />
+        <Route path="/producto/:id" element={<PrivateRoute><ProductDetails /></PrivateRoute>} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-    </div>
+    </ThemeProvider>
   );
 }
+
+export default App;

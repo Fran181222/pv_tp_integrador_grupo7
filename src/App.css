@@ -47,14 +47,14 @@
 
 /* Navbar */
 
- .navbar {
+ .navbar-links {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 20px;
   padding: 20px 80px;
   padding-right: 40px;
-  background: #dcdef3;
+  background: #acb3fa;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
   position: fixed;
   top: 0;
@@ -63,8 +63,15 @@
   z-index: 1000;
 
  }
+.navbar{
+  color: #1a1a1a; 
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
 
- .navbar a {
+ .navbar-links div {
   color: #1a1a1a; 
   text-decoration: none;
   font-weight: 600;
@@ -77,10 +84,13 @@
   padding: 0 20px;
 }
 
-.navbar a:hover {
+.navbar-links div:hover {
   color: #8d92ff;
 }
-
+.navbar-links .active {
+  color: #8d92ff;
+  font-weight: bold;
+}
 /* contenedor producto */
 
 .producto_contenedor {
