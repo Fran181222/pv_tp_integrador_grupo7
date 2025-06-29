@@ -12,7 +12,8 @@ export default function Home() {
   }, [dispatch]);
 
   return (
-    <div className="p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div className="flex flex-col items-center gap-6 mt-24">
+
       {products.map(product => (
         <ProductCard key={product.id} product={product} />
       ))}

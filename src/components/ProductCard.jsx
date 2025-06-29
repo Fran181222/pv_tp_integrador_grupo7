@@ -8,14 +8,16 @@ export default function ProductCard({ product }) {
   const isFavorite = favorites.includes(product.id);
 
   return (
-    <div className="border p-4 rounded shadow">
-      <img src={product.image} alt={product.title} className="h-40 object-contain" />
+    <div className="producto_contenedor">
+      <div className='producto'>
+      <img src={product.image} alt={product.title} />
       <h3>{product.title}</h3>
       <p>${product.price}</p>
       <button onClick={() => dispatch(toggleFavorite(product.id))}>
         {isFavorite ? '💖' : '🤍'}
       </button>
       <Link to={`/detalle/${product.id}`}>Ver más detalles</Link>
+    </div>
     </div>
   );
 }
