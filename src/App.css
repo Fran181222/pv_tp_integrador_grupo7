@@ -1,7 +1,7 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0 2rem;
   text-align: center;
 }
 
@@ -39,4 +39,143 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.main-content {
+  margin-top: 80px; 
+}
+
+/* Navbar */
+
+ .navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 80px;
+  padding-right: 40px;
+  background: #dcdef3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+ }
+
+ .navbar a {
+  color: #1a1a1a; 
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar li {
+  list-style: none;
+  padding: 0 20px;
+}
+
+.navbar a:hover {
+  color: #8d92ff;
+}
+
+/* contenedor producto */
+
+.producto_contenedor {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.producto_contenedor .producto {
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #f8f0f0;
+  border-radius: 25px;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.);
+  margin: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.producto_contenedor .producto:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+.producto_contenedor .producto img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.producto_contenedor .producto h3 {
+  padding-top: 7px;
+  font-size:  14px;
+  color: #1a1a1a;
+}
+
+.producto_contenedor .producto p {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #46a351;
+}
+
+/* detalles del producto*/
+
+.product-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 100px auto 0;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-detail-container img {
+  width: 180px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.product-detail-container h1 {
+  padding-top: 7px;
+  font-size:  20px;
+  color: #1a1a1a;
+}
+
+.product-detail-container p {
+  padding-top: 4px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #46a351;
+}
+
+.product-detail-container .categoria {
+  padding-top: 4px;
+  font-size: 13px;
+  color: #747373;
+}
+
+.product-detail-container .descripcion {
+  padding-top: 4px;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+.product-detail-container button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #dcdef3;
+  color: #131313;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
