@@ -23,11 +23,11 @@ const Home = () => {
       <Typography variant="h4" gutterBottom>Productos</Typography>
       <Grid container spacing={2}>
         {items.map(product => (
-          <Grid item key={product.id}>
-            <Box sx={cardZoomStyle}>
-              <ProductCard product={product} />
-            </Box>
-          </Grid>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
+  <Box sx={{ height: '100%' }}>
+    <ProductCard product={product} />
+  </Box>
+</Grid>
         ))}
       </Grid>
     </div>

@@ -5,6 +5,7 @@ import { Favorite, FavoriteBorder } from '@mui/icons-material';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleFavorite } from '../features/products/productsSlice';
 import { Link } from 'react-router-dom';
+import '../App.css';
 
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
@@ -12,21 +13,21 @@ const ProductCard = ({ product }) => {
   const isFavorite = favorites.includes(product.id);
 
   return (
-    <Card sx={{ maxWidth: 300, m: 1 }}>
-      <CardMedia
+    <Card className="product-card-home">
+      <div className='product-card-media-wrapper'>
+      <CardMedia className='product-card-imagen'
         component="img"
-        height="200"
         image={product.image}
         alt={product.title}
-        sx={{ objectFit: 'contain', p: 2 }}
       />
-      <CardContent>
-        <Typography variant="h6">{product.title}</Typography>
-        <Typography variant="body2">${product.price}</Typography>
-        <Typography variant="body2" color="text.secondary">{product.category}</Typography>
+    </div>
+      <CardContent className="product-content-home">
+        <Typography variant="h6" className="producto-titulo">{product.title}</Typography>
+        <Typography variant="body2" className="producto-precio">${product.price}</Typography>
+        <Typography variant="body2" className="product-category">{product.category}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" component={Link} to={`/producto/${product.id}`}>Ver más</Button>
+        <Button size="small" component={Link} to={`/producto/${product.id}`} className="product-button">Ver más</Button>
         <IconButton
           onClick={() => dispatch(toggleFavorite(product.id))}
           sx={{
