@@ -3,7 +3,7 @@ import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleFavorite } from '../features/products/productsSlice';
-import { Button, Typography, Card, CardContent, CardMedia } from '@mui/material';
+import { Button, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
 import '../App.css'; 
 
 const ProductDetails = () => {
@@ -29,12 +29,24 @@ const ProductDetails = () => {
       <Typography variant="body1" className="product-price">${product.price}</Typography>
       <Typography variant="body2" color="text.secondary">{product.category}</Typography>
       <Typography paragraph>{product.description}</Typography>
-      <Button variant="outlined" color={isFavorite ? 'error' : 'primary'} onClick={() => dispatch(toggleFavorite(product.id))}>
-        {isFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
-      </Button>
-      <Button sx={{ ml: 2 }} variant="contained" onClick={() => navigate(`/editar/${product.id}`)}>
-        Editar producto
-      </Button>
+      <Box display="flex" gap={2} mt={2}>
+        <Button variant="outlined" color={isFavorite ? 'error' : 'primary'} onClick={() => dispatch(toggleFavorite(product.id))}>
+          {isFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
+        </Button>
+        <Button variant="contained" onClick={() => navigate(`/editar/${product.id}`)}>
+          Editar producto
+        </Button>
+        <Button
+          variant="contained"
+          color="error"
+          onClick={() => {
+            dispatch(deleteProduct(product.id));
+            navigate('/');
+          }}
+        >
+          Eliminar producto
+        </Button>
+      </Box>
     </CardContent>
   </div>
 </Card>
