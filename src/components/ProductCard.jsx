@@ -27,7 +27,7 @@ const ProductCard = ({ product }) => {
         <Typography variant="body2" className="product-category">{product.category}</Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" component={Link} to={`/producto/${product.id}`} className="product-button">Ver más</Button>
+        <Button size="small" component={Link} to={`/producto/${product.id}`} style={{color:'#73799e', borderRadius:'10px',borderColor: '#73799e'}} className="product-button">Ver más</Button>
         <IconButton
           onClick={() => dispatch(toggleFavorite(product.id))}
           sx={{

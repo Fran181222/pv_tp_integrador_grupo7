@@ -1,7 +1,8 @@
 // src/views/Home.jsx
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Grid, Typography, CircularProgress, Box } from '@mui/material';
+import { Typography, CircularProgress, Box } from '@mui/material';
+import Masonry from '@mui/lab/Masonry';
 import ProductCard from '../components/ProductCard';
 
 const cardZoomStyle = {
@@ -19,17 +20,15 @@ const Home = () => {
   if (status === 'loading') return <CircularProgress sx={{ mt: 5 }} />;
 
   return (
-    <div style={{ padding: '20px' }}>
+    <div style={{ padding: '20px', background: 'linear-gradient(90deg,rgba(217, 217, 217, 0),rgba(82, 138, 145, 0))' }}>
       <Typography variant="h4" gutterBottom>Productos</Typography>
-      <Grid container spacing={2}>
+      <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
         {items.map(product => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
-  <Box sx={{ height: '100%' }}>
-    <ProductCard product={product} />
-  </Box>
-</Grid>
+          <Box key={product.id} sx={{ ...cardZoomStyle }}>
+            <ProductCard product={product} />
+          </Box>
         ))}
-      </Grid>
+      </Masonry>
     </div>
   );
 };

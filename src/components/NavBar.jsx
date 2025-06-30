@@ -18,12 +18,12 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar className='navbar' position="static">
-      <Toolbar sx={{ justifyContent: 'space-between' }}>
-        <Typography className='group7' variant="h6">Grupo 7</Typography>
+    <AppBar position="static">
+      <Toolbar className='navbar' sx={{ justifyContent: 'space-between' }}>
         <div className='navbar-links'>
           {user && (
             <>
+            <Typography className='group7' variant="h6">Grupo 7</Typography>
               <Button color="inherit" component={Link} to="/">Inicio</Button>
               <Button color="inherit" component={Link} to="/favoritos">Favoritos</Button>
               <Button color="inherit" component={Link} to="/crear">Crear</Button>

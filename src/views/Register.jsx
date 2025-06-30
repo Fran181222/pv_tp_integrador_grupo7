@@ -33,7 +33,8 @@ const Register = () => {
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', bgcolor: 'background.default' }}>
+    <div style={{ padding: '20px', background: 'linear-gradient(90deg,rgba(217, 217, 217, 0),rgba(82, 138, 145, 0))' }}>
+    <Box sx={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Paper elevation={4} sx={{ p: 4, width: 400 }}>
         <Typography variant="h5" align="center" gutterBottom>
           Registro
@@ -50,7 +51,7 @@ const Register = () => {
               value={form.email}
               autoComplete="email"
               required
-            />
+              />
             <TextField
               label="Contraseña"
               name="password"
@@ -68,13 +69,13 @@ const Register = () => {
                       aria-label="Mostrar/ocultar contraseña"
                       onClick={() => setShowPassword((show) => !show)}
                       edge="end"
-                    >
+                      >
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 ),
               }}
-            />
+              />
             <TextField
               label="Confirmar contraseña"
               name="confirm"
@@ -92,21 +93,22 @@ const Register = () => {
                       aria-label="Mostrar/ocultar confirmación"
                       onClick={() => setShowConfirm((show) => !show)}
                       edge="end"
-                    >
+                      >
                       {showConfirm ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 ),
               }}
-            />
-            <Button type="submit" variant="contained" sx={{ mt: 2 }}>
+              />
+            <Button type="submit" variant="contained" color='success' sx={{ mt: 2 }}>
               Registrarse
             </Button>
           </Stack>
         </form>
       </Paper>
     </Box>
-  );
+  </div>
+);
 };
 
 export default Register;

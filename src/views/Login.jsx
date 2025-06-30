@@ -34,15 +34,15 @@ const Login = () => {
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   return (
+    <div style={{ padding: '20px', background: 'linear-gradient(90deg,rgba(217, 217, 217, 0),rgba(82, 138, 145, 0))' }} >
     <Box
       sx={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        bgcolor: 'background.default',
       }}
-    >
+      >
       <Paper elevation={4} sx={{ p: 4, width: 350 }}>
         <Typography variant="h5" align="center" gutterBottom>
           Iniciar Sesión
@@ -63,7 +63,7 @@ const Login = () => {
               value={form.email}
               onChange={handleChange}
               autoComplete="email"
-            />
+              />
             <TextField
               label="Contraseña"
               name="password"
@@ -80,20 +80,21 @@ const Login = () => {
                       aria-label="toggle password visibility"
                       onClick={handleClickShowPassword}
                       edge="end"
-                    >
+                      >
                       {showPassword ? <VisibilityOff /> : <Visibility />}
                     </IconButton>
                   </InputAdornment>
                 ),
               }}
-            />
-            <Button type="submit" variant="contained" color="primary" fullWidth>
+              />
+            <Button type="submit" variant="contained" color="secondary" fullWidth>
               Ingresar
             </Button>
           </Stack>
         </form>
       </Paper>
     </Box>
+  </div>
   );
 };
 

@@ -9,19 +9,23 @@ const Favorites = () => {
   const favoriteProducts = items.filter(product => favorites.includes(product.id));
 
   return (
-    <div style={{ padding: '20px' }}>
-      <Typography variant="h4" gutterBottom>Favoritos</Typography>
+    <div style={{ padding: '20px', minHeight: '60vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <Typography variant="h4" gutterBottom align="center">
+        Favoritos
+      </Typography>
       {favoriteProducts.length === 0 ? (
-          <Typography>No hay productos favoritos.</Typography>
-          ) : (
-          <Grid container spacing={2}>
-      {favoriteProducts.map(product => (
-          <Grid item key={product.id}>
-            <ProductCard product={product} />
-          </Grid>
-      ))}
-      </Grid>
-        )}
+        <Typography variant="h5" color="text.secondary" align="center">
+          No hay productos favoritos.
+        </Typography>
+      ) : (
+        <Grid container spacing={2} justifyContent="center">
+          {favoriteProducts.map(product => (
+            <Grid item key={product.id}>
+              <ProductCard product={product} />
+            </Grid>
+          ))}
+        </Grid>
+      )}
     </div>
   );
 };
