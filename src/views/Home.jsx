@@ -20,7 +20,13 @@ const Home = () => {
   if (status === 'loading') return <CircularProgress sx={{ mt: 5 }} />;
 
   return (
-    <div style={{ padding: '20px', background: 'linear-gradient(90deg,rgba(217, 217, 217, 0),rgba(82, 138, 145, 0))' }}>
+    <div
+      style={{
+        padding: '20px',
+        paddingTop: '84px', // <-- agrega este padding superior
+        background: 'linear-gradient(90deg,rgba(217, 217, 217, 0),rgba(82, 138, 145, 0))'
+      }}
+    >
       <Typography variant="h4" gutterBottom>Productos</Typography>
       <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 4 }} spacing={2}>
         {items.map(product => (

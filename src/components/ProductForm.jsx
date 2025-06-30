@@ -44,7 +44,7 @@ const ProductForm = () => {
 
   return (
     <Box sx={{ p: 4, maxWidth: 600, mx: 'auto' }}>
-      <Typography variant="h5" gutterBottom>
+      <Typography variant="h5" gutterBottom sx={{ mt: 8 }}>
         {isEdit ? 'Editar Producto' : 'Crear Producto'}
       </Typography>
       <form onSubmit={handleSubmit}>
