@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { toggleFavorite } from '../features/products/productsSlice';
+import { toggleFavorite, deleteProduct } from '../features/products/productsSlice';
 import { Button, Typography, Card, CardContent, CardMedia, Box } from '@mui/material';
 import '../App.css'; 
 
@@ -33,7 +33,7 @@ const ProductDetails = () => {
         <Button variant="outlined" color={isFavorite ? 'error' : 'primary'} onClick={() => dispatch(toggleFavorite(product.id))}>
           {isFavorite ? 'Quitar de favoritos' : 'Agregar a favoritos'}
         </Button>
-        <Button variant="contained" onClick={() => navigate(`/editar/${product.id}`)}>
+        <Button sx={{ ml: 2 }} variant="contained" onClick={() => navigate(`/editar/${product.id}`)}>
           Editar producto
         </Button>
         <Button
